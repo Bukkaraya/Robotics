@@ -1067,8 +1067,8 @@ Private Sub Form_Load()
     j3_min = -105
     j3_max = 50
     j4_min = -90
-    j4_max = 101
-    j5_min = -178
+    j4_max = 150
+    j5_min = -180
     j5_max = 160
     
     Call update_location_text
@@ -1367,7 +1367,7 @@ Private Sub corner_one_pos_Click(Index As Integer)
     j1 = -133
     j2 = 60
     j3 = 50
-    j4 = 100.64
+    j4 = 142.83
     j5 = -178
     
     joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
@@ -1396,7 +1396,7 @@ Private Sub corner_two_pos_Click(Index As Integer)
     j1 = 136.5
     j2 = 60
     j3 = 50
-    j4 = 100.64
+    j4 = 142.83
     j5 = -178
     
     joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
