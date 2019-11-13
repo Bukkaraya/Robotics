@@ -172,6 +172,42 @@ Begin VB.Form CrsDemo
       TabIndex        =   48
       Top             =   120
       Width           =   3255
+      Begin VB.CommandButton corner_four_pos 
+         Caption         =   "Corner 4"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   915
+         Index           =   1
+         Left            =   1800
+         TabIndex        =   59
+         Top             =   2760
+         Width           =   1095
+      End
+      Begin VB.CommandButton corner_three_pos 
+         Caption         =   "Corner 3"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   915
+         Index           =   0
+         Left            =   360
+         TabIndex        =   58
+         Top             =   2760
+         Width           =   1095
+      End
       Begin VB.CommandButton throw_ball 
          Caption         =   "Throw Ball"
          BeginProperty Font 
@@ -1418,6 +1454,68 @@ Private Sub corner_two_pos_Click(Index As Integer)
 End Sub
 
 
+Private Sub corner_three_pos_Click(Index As Integer)
+
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -43.5
+    j2 = 60
+    j3 = 50
+    j4 = 142.83
+    j5 = -178
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    robot.GripperOpen
+End Sub
+
+
+
+Private Sub corner_four_pos_Click(Index As Integer)
+
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = 46.5
+    j2 = 60
+    j3 = 50
+    j4 = 142.83
+    j5 = -178
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    robot.GripperOpen
+End Sub
+
+
+
 Private Sub throw_ball_Click(Index As Integer)
 
     CrsDemo.Hide
@@ -1588,5 +1686,767 @@ Private Sub hit_ball_Click(Index As Integer)
     
 
 End Sub
+
+
+Private Function press_one()
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -33
+    j2 = 29.82
+    j3 = -70.1
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -33
+    j2 = 28.75
+    j3 = -70.66
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -33
+    j2 = 29.82
+    j3 = -70.1
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+
+End Function
+
+
+Private Function press_two()
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -31
+    j2 = 29.82
+    j3 = -70.1
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -31
+    j2 = 28.82
+    j3 = -70.1
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -31
+    j2 = 29.82
+    j3 = -70.1
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+
+End Function
+
+
+Private Function press_three()
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -29
+    j2 = 29.82
+    j3 = -69.1
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -29
+    j2 = 27.82
+    j3 = -69.1
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -29
+    j2 = 29.82
+    j3 = -69.1
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+
+End Function
+
+
+
+Private Function press_four()
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -33
+    j2 = 28.82
+    j3 = -68
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -33
+    j2 = 26.82
+    j3 = -68
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -33
+    j2 = 28.82
+    j3 = -68
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+
+End Function
+
+
+
+Private Function press_five()
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -31
+    j2 = 28.82
+    j3 = -67
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -31
+    j2 = 26.82
+    j3 = -67
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -31
+    j2 = 28.82
+    j3 = -67
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+
+End Function
+
+
+Private Function press_six()
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -29
+    j2 = 27.82
+    j3 = -66
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -29
+    j2 = 26.82
+    j3 = -66
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -29
+    j2 = 27.82
+    j3 = -66
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+
+End Function
+
+
+Private Function press_seven()
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -33
+    j2 = 27.82
+    j3 = -66
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -33
+    j2 = 25.82
+    j3 = -66
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -33
+    j2 = 27.82
+    j3 = -66
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+
+End Function
+
+
+Private Function press_eight()
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -31
+    j2 = 27.82
+    j3 = -66
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -31
+    j2 = 25.82
+    j3 = -66
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -31
+    j2 = 27.82
+    j3 = -66
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+
+End Function
+
+
+Private Function press_nine()
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -29
+    j2 = 27.82
+    j3 = -65
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -29
+    j2 = 25.82
+    j3 = -65
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -29
+    j2 = 27.82
+    j3 = -65
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+
+End Function
+
+
+Private Function press_zero()
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -31.5
+    j2 = 26.5
+    j3 = -63
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -31.5
+    j2 = 24.5
+    j3 = -63
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+    
+    CrsDemo.Hide
+    frmSplash.Show
+    
+    j1 = -31.5
+    j2 = 26.5
+    j3 = -63
+    j4 = 10.8
+    j5 = 0
+    
+    joints_within_limits = robot_joints_within_limits(j1, j2, j3, j4, j5)
+    status_bar.Caption = joints_within_limits
+    
+    If robot_joints_within_limits(j1, j2, j3, j4, j5) Then
+        Set world_location = robot.JointToWorld(j1, j2, j3, j4, j5, j6, j7, j8)
+        
+        robot.Move world_location
+        Call show_busy
+        Call update_location_text
+    Else
+        status_bar.Caption = "Error: Joint limits exceeded"
+        frmSplash.Hide
+        CrsDemo.Show
+    End If
+
+End Function
 
 
