@@ -1,0 +1,5 @@
+rosrun baxter_examples joint_trajectory_file_playback.py -f grip_jar
+rosrun baxter_examples joint_trajectory_file_playback.py -f move_up
+rosrun baxter_examples joint_trajectory_file_playback.py -f move_to_open_position_right
+rosrun baxter_examples joint_trajectory_file_playback.py -f move_to_open_position_left
+rosrun baxter_examples joint_trajectory_file_playback.py -f open_jar
